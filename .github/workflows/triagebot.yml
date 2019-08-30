@@ -1,0 +1,13 @@
+name: "TriageBot"
+on: [pull_request, issue_comment, issues]
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: npm i
+      run: npm i
+    - uses: ./
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

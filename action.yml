@@ -1,0 +1,14 @@
+name: TraiageBot
+description: 'A bot for triaging activity on github'
+author: 'GitHub'
+inputs:
+  token:
+    description: 'The GITHUB_TOKEN secret'
+    required: true
+  config:
+    description: 'The path for the triagebot configurations'
+    default: '.github/triagebot.js'
+    required: true
+runs:
+  using: 'node12'
+  main: 'index.js'
